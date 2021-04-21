@@ -3,7 +3,7 @@
 # Package			: grpc-core
 # Version			: 1.28.1
 # Source repo		: https://github.com/grpc/grpc-java
-# Tested on			: RHEL 7.6
+# Tested on			: UBI8
 # Script License	: Apache License Version 2.0
 # Maintainer		: Pratham Murkute <prathamm@us.ibm.com>
 #
@@ -19,15 +19,14 @@
 
 # install tools and dependent packages
 #yum -y update
-yum install -y git wget curl unzip nano vim make build-essential dos2unix
+yum install -y git wget curl unzip nano vim make dos2unix
 #yum install -y gcc ant
 
 # setup java environment
 yum install -y java java-devel
 which java
 ls /usr/lib/jvm/
-#export JAVA_HOME=/usr/lib/jvm/java-1.8.0-ibm-1.8.0.6.5-1jpp.1.el7.ppc64le
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-ibm-1.8.0.6.25-1jpp.1.el7.ppc64le
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.282.b08-2.el8_3.ppc64le
 # update the path env. variable 
 export PATH=$PATH:$JAVA_HOME/bin
 
