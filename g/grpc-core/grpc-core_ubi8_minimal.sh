@@ -26,7 +26,8 @@ microdnf install -y git wget curl unzip nano vim make dos2unix
 microdnf install -y java java-devel
 which java
 ls /usr/lib/jvm/
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.282.b08-2.el8_3.ppc64le
+export JAVA_HOME=/usr/lib/jvm/$(ls /usr/lib/jvm/ | grep -P '^(?=.*java-)(?=.*ppc64le)')
+echo "JAVA_HOME is $JAVA_HOME"
 # update the path env. variable 
 export PATH=$PATH:$JAVA_HOME/bin
 
